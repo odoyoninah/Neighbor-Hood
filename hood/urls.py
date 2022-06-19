@@ -13,6 +13,8 @@ urlpatterns = [
     path('account/', include('django.contrib.auth.urls')), 
     path('hood/', include('hood.urls')),
     path('business/', include('business.urls')),
+    path('createbusiness/', views.createbusiness, name='createbusiness'),
+    path('createpost/', views.createpost, name='createpost'),
     
 ]
 
