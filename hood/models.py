@@ -17,7 +17,7 @@ class Hood(models.Model):
 
     def create_hood(self):
         self.save()
-        
+
     def save_hood(self):
         self.save()
 
@@ -26,6 +26,12 @@ class Hood(models.Model):
 
     def update_hood(self):
         self.save()
+
+    def update_occupants(self):
+        self.occupants += 1
+        self.save()
+
+    
 
     def __str__(self):
         return self.name
@@ -37,6 +43,19 @@ class Business(models.Model):
     email = models.EmailField(max_length=50)
     admin = models.ForeignKey('Admin', on_delete=models.CASCADE)
 
+    def create_business(self):
+        self.save()
+
+    def save_business(self):
+        self.save()
+
+    def delete_business(self):
+        self.delete()
+
+    def update_business(self):
+        self.save()
+
+
     def __str__(self):
         return self.name
 
@@ -47,6 +66,19 @@ class User(models.Model):
     password = models.CharField(max_length=50)
     admin = models.ForeignKey('Admin', on_delete=models.CASCADE)
 
+    def create_user(self):
+        self.save()
+
+    def save_user(self):
+        self.save()
+
+    def delete_user(self):
+        self.delete()
+
+    def update_user(self):
+        self.save()
+
+
     def __str__(self):
         return self.name
 
@@ -55,6 +87,19 @@ class Admin(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
     password = models.CharField(max_length=50)
+
+    def create_admin(self):
+        self.save()
+
+    def save_admin(self):
+        self.save()
+
+    def delete_admin(self):
+        self.delete()
+
+    def update_admin(self):
+        self.save()
+
 
     def __str__(self):
         return self.name
@@ -67,6 +112,19 @@ class Post(models.Model):
     hood = models.ForeignKey('Hood', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='posts/')
 
+    def create_post(self):
+        self.save()
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
+
+    def update_post(self):
+        self.save()
+
+        
     def __str__(self):
         return self.title
 
