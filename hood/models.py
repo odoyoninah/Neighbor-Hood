@@ -111,6 +111,7 @@ class Post(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE)
     hood = models.ForeignKey('Hood', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='posts/')
+    description = models.TextField()
 
     def create_post(self):
         self.save()
