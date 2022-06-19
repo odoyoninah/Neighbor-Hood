@@ -10,7 +10,8 @@ from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required
 #handle all the status code responses.
 
-
+def index(request):
+    return render(request,'index.html')
 
 
 
