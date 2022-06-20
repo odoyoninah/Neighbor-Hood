@@ -33,7 +33,7 @@
     </h1>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-5">
                 <div class="card">
                     <div class="card-header">
                         <h4>Create Post</h4>
@@ -41,6 +41,10 @@
                     <div class="card-body">
                         <form action="{% url 'createpost' %}" method="POST">
                             {% csrf_token %}
+                            <div class="mb-2">
+                                
+                                <input class="form-control form-control-sm" id="formFileSm" type="file">
+                              </div>
                             <div class="form-group">
                                 <label for="title">Title</label>
                                 <input type="text" class="form-control" id="title" name="title" placeholder="Title">

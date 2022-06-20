@@ -19,9 +19,6 @@ def index(request):
 def business(request):
     return render(request,'business.html')
 
-def hood(request):
-    return render(request,'hood.html')
-
 @login_required(login_url='/accounts/login/')
 def createpost(request):
     if request.method=='POST':
@@ -30,7 +27,7 @@ def createpost(request):
             post = form.save(commit=False)
             post.save()
 
-            return redirect('hood')
+            return redirect('index')
     else:
         form = PostForm()
     return render(request,'createpost.html',{'form':form}) 
