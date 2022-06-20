@@ -13,7 +13,6 @@ class Hood(models.Model):
     health_care_address = models.EmailField(max_length=50)
     health_care_name = models.CharField(max_length=50)
     posts = models.ImageField(upload_to='posts/')
-    description = models.TextField()
     admin = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def create_hood(self):

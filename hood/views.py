@@ -45,6 +45,19 @@ def createbusiness(request):
         form = BusinessForm()
     return render(request,'createbusiness.html',{'form':form}) 
 
+@login_required(login_url='/accounts/login/')
+def createhood(request):
+    if request.method=='POST':
+        form = HoodForm(request.POST,request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+
+            return redirect('index')
+    else:
+        form =HoodForm()
+    return render(request,'createhood.html',{'form':form}) 
+
 
 
 

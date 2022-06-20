@@ -14,9 +14,9 @@
 </head>
 <body>
 <div class="navbar">
-  <nav class="navbar navbar-secondary bg-secondary secondary-top">
+  <nav class="navbar navbar-secondary bg-secondary -top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'index' %}">Pro-Nav</a>
+      <a class="navbar-brand" href="{% url 'index' %}">Nav-Bar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,6 +41,7 @@
                 <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
                 
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                <li><a class="dropdown-item" href="{% url 'createhood' %}">Residences</a></li>
                 <li><a class="dropdown-item" href="{% url 'business' %}">Business</a></li>
                 <li><a class="dropdown-item" href="{% url 'createbusiness' %}">Create a Business</a></li>
                 <li><a class="dropdown-item" href="{% url 'createpost' %}">Create a Post</a></li>
