@@ -11,11 +11,11 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('account/', include('django.contrib.auth.urls')), 
-    path('business/', views.business,name='business'),
+    path('hoodbusiness/', views.hoodbusiness,name='hoodbusiness'),
     path('createbusiness/', views.createbusiness, name='createbusiness'),
     path('createpost/', views.createpost, name='createpost'),
     path('residence/', views.createhood, name='createhood'),
-    
+    path('hoodposts/', views.hoodposts,name='hoodposts' )
 ]
 
 if settings.DEBUG:

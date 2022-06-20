@@ -16,8 +16,13 @@ def index(request):
     post = Post.objects.all()
     return render(request,'index.html')
 
-def business(request):
-    return render(request,'business.html')
+def hoodbusiness(request):
+    business = Business.objects.all()
+    return render(request,'hoodbusiness.html')
+
+def hoodposts(request):
+    post = Post.objects.all()
+    return render(request,'hoodposts.html')
 
 @login_required(login_url='/accounts/login/')
 def createpost(request):
