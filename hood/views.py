@@ -62,7 +62,7 @@ def createhood(request):
             post = form.save(commit=False)
             post.save()
 
-            return redirect('index')
+            return redirect('neighborhood')
     else:
         form =HoodForm()
     return render(request,'createhood.html',{'form':form}) 
