@@ -19,7 +19,7 @@ class RegisterForm(UserCreationForm):
 class BusinessForm(ModelForm):
     class Meta:
         model = Business
-        fields = ['name','admin','email','hood_id','user']
+        fields = ['name','email','hood_id','user']
 
 class PostForm(ModelForm):
     class Meta:

@@ -11,8 +11,8 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('account/', include('django.contrib.auth.urls')), 
-    path('hood/', include('hood.urls')),
-    path('business/', include('business.urls')),
+    path('hood/', views.hood,name='hood'),
+    path('business/', views.business,name='business'),
     path('createbusiness/', views.createbusiness, name='createbusiness'),
     path('createpost/', views.createpost, name='createpost'),
     
