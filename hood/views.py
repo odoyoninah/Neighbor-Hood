@@ -24,6 +24,10 @@ def hoodposts(request):
     post = Post.objects.all()
     return render(request,'hoodposts.html')
 
+def neighborhood(request):
+    hood = Hood.objects.all()
+    return render(request,'neighborhood.html')
+
 @login_required(login_url='/accounts/login/')
 def createpost(request):
     if request.method=='POST':
@@ -32,7 +36,7 @@ def createpost(request):
             post = form.save(commit=False)
             post.save()
 
-            return redirect('index')
+            return redirect('hoodposts')
     else:
         form = PostForm()
     return render(request,'createpost.html',{'form':form}) 
@@ -45,7 +49,7 @@ def createbusiness(request):
             post = form.save(commit=False)
             post.save()
 
-            return redirect('business')
+            return redirect('hoodbusiness')
     else:
         form = BusinessForm()
     return render(request,'createbusiness.html',{'form':form}) 

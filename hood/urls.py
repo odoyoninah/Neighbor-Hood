@@ -15,7 +15,8 @@ urlpatterns = [
     path('createbusiness/', views.createbusiness, name='createbusiness'),
     path('createpost/', views.createpost, name='createpost'),
     path('residence/', views.createhood, name='createhood'),
-    path('hoodposts/', views.hoodposts,name='hoodposts' )
+    path('hoodposts/', views.hoodposts,name='hoodposts' ),
+    path('neighborhood/', views.neighborhood, name='neighborhood'),
 ]
 
 if settings.DEBUG:
