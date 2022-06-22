@@ -26,7 +26,7 @@ def hoodposts(request):
 
 def neighborhood(request):
     hood = Hood.objects.all()
-    return render(request,'neighborhood.html')
+    return render(request,'neighborhood.html',{'hood':hood})
 
 @login_required(login_url='/accounts/login/')
 def createpost(request):

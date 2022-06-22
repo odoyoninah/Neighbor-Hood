@@ -1,10 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% block styles %}
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -26,41 +26,55 @@
     {% endblock %}
     <title>NeighborHood</title>
     {% include "navbar.html" %}
-</head>
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">
-    <h3>
-        Neighbor-Hood
-    </h3>
-    <p>
-      This is the page where get to see their created neighborhoods.
-    </p>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <br><br>
-
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">
-        Hood name
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Neighbor-Hood</h3>
+              <p>
+                This is the page where get to see their created neighborhoods.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"></li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-      </ul>
     </div>
-    
+    <br /><br />
+    <div class="neigh">
+    <div class="container-fluid">
+      <div class="row" align="center">
+        {% for hood in hood %}
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              Hood name: <strong>{{ hood.name }}</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"></li>
+              <li class="list-group-item">
+                Hood occupants:<strong>{{ hood.occupants}}</strong>
+              </li>
+              <li class="list-group-item">
+                Police Station:<strong>{{ hood.police_station_name}}</strong>
+              </li>
+              <li class="list-group-item">
+                Health center:<strong>{{ hood.health_care_name}}</strong>
+              </li>
+            </ul>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"
-  ></script>   
-</body>
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
