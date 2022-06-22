@@ -84,6 +84,15 @@ def signup(request):
         form = RegisterForm()
     return render(request,'registration/signup.html',{'form':form})
 
+def search_name(request):
+    if 'search' in request.GET and request.GET['search']:
+        search_name = request.GET.get('search')
+        my_search_results = Hood.get_name(search_name)
+        return render(request,'search.html',{'results':my_search_results})
+
+    else:
+        message = 'You have not searched for anything'
+        return render(request,'search.html',{'message':message})
 
     
 def logout(request):
