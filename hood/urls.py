@@ -18,6 +18,7 @@ urlpatterns = [
     path('hoodposts/', views.hoodposts,name='hoodposts' ),
     path('neighborhood/', views.neighborhood, name='neighborhood'),
     path('search/',views.search_name,name='search'),
+    path('profile/',views.profile,name='profile'),
 ]
 
 if settings.DEBUG:

@@ -93,6 +93,13 @@ def search_name(request):
     else:
         message = 'You have not searched for anything'
         return render(request,'search.html',{'message':message})
+        
+@login_required(login_url='/accounts/login/')   
+def profile(request):
+    if request.user.is_authenticated:
+        return render(request,'profile.html')
+    else:
+        return redirect('login')
 
     
 def logout(request):

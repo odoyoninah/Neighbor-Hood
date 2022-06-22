@@ -18,7 +18,16 @@
     <title>NeighborHood</title>
 </head>
 <body>
-  {% include "navbar.html" %} 
+  {% include "navbar.html" %}
+  <div class="search">
+    <form action="{% url 'search' %}">
+      <input type="text" name="search" placeholder="Search" />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <div class="container" align="right">
+  <button><h4>Profile</h4> <a class="card-link" href="{% url 'profile' %}"><img src="https://images.unsplash.com/photo-1518378188025-22bd89516ee2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvZ3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60 " width="70" height="70" alt="Profile"></a></button>
+</div> 
   <div class="home">
   <div class="container">
     <div class="row">
@@ -39,12 +48,7 @@
     </div>
     </div>
     <br><br>
-    <div class="search">
-      <form action="{% url 'search' %}">
-        <input type="text" name="search" placeholder="Search" />
-        <button type="submit">Search</button>
-      </form>
-    </div>
+    
     <div class="container" align="center">
     <div class="card text-white bg-success mb-3" style="width: 18rem;">
       <div class="card-body" align="center">
