@@ -18,11 +18,11 @@ def index(request):
 
 def hoodbusiness(request):
     business = Business.objects.all()
-    return render(request,'hoodbusiness.html')
+    return render(request,'hoodbusiness.html',{'biz':business})
 
 def hoodposts(request):
-    post = Post.objects.all()
-    return render(request,'hoodposts.html')
+    posts = Post.objects.all()
+    return render(request,'hoodposts.html', {'posts':posts})
 
 def neighborhood(request):
     hood = Hood.objects.all()

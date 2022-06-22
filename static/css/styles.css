@@ -1,3 +1,6 @@
-*{
-    background-color: yellow;
+.home{
+    background-color: teal;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
 }
